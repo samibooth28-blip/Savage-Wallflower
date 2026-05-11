@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savage Wallflower — A Brand Built From Nothing But Imagination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --hot-pink: #FF2D78;
+      --deep-black: #0a0a0a;
+      --off-white: #F5F0E8;
+      --charcoal: #141414;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--deep-black);
+      color: var(--off-white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+    .label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--hot-pink);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.58);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.15) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 6vw 7vh;
+      max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--hot-pink);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--off-white);
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--hot-pink); }
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(0.82rem, 1.6vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.6);
+    }
+
+    /* TICKER */
+    .ticker { background: var(--hot-pink); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 30s linear infinite; }
+    .ticker-inner span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--deep-black);
+      padding: 0 3rem;
+    }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* BRAND STATEMENT */
+    .brand-wrap { padding: clamp(5rem,10vw,9rem) 6vw; }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 7vw;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .brand-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .brand-desc {
+      border-left: 2px solid var(--hot-pink);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .brand-desc p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.85;
+      color: rgba(245,240,232,0.85);
+      margin-bottom: 0.6rem;
+    }
+    .brand-text p.body-copy {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.58);
+    }
+    .brand-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ORIGIN */
+    .origin {
+      background: var(--charcoal);
+      padding: clamp(5rem,10vw,9rem) 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .origin::before {
+      content: '"';
+      position: absolute;
+      top: -4rem; left: 3vw;
+      font-family: 'Playfair Display', serif;
+      font-size: 22rem;
+      color: var(--hot-pink);
+      opacity: 0.05;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .origin-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+    .origin-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+    .origin-inner p {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 2;
+      color: rgba(245,240,232,0.7);
+      margin-bottom: 1.75rem;
+    }
+    .origin-inner p strong { color: var(--hot-pink); font-weight: 500; }
+
+    /* BUILT */
+    .built-wrap { padding: clamp(5rem,10vw,9rem) 6vw; max-width: 1280px; margin: 0 auto; }
+    .built-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
+    .built-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .built-item { padding: 2.5rem 2rem; background: var(--deep-black); transition: background 0.3s; }
+    .built-item:hover { background: #111; }
+    .built-item .num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--hot-pink);
+      opacity: 0.22;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .built-item h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.6rem;
+    }
+    .built-item p { font-size: 0.88rem; line-height: 1.7; color: rgba(245,240,232,0.48); }
+
+    /* GALLERY */
+    .gallery-wrap { padding: 0 6vw clamp(5rem,10vw,9rem); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.75rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .g1 { grid-column: 1/5; grid-row: 1; }
+    .g2 { grid-column: 5/9; grid-row: 1; }
+    .g6 { grid-column: 9/13; grid-row: 1; }
+    .g3 { grid-column: 1/5; grid-row: 2; }
+    .g4 { grid-column: 5/9; grid-row: 2; }
+    .g5 { grid-column: 9/13; grid-row: 2; }
+    .gallery-grid img { width:100%; height:100%; object-fit:cover; display:block; min-height:260px; }
+
+    /* VIDEO */
+    .video-wrap-outer {
+      background: var(--charcoal);
+      padding: clamp(5rem,10vw,9rem) 6vw;
+      text-align: center;
+    }
+    .video-wrap-outer h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,4vw,3rem);
+      font-weight: 900;
+      margin-bottom: 0.75rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-wrap-outer p.sub {
+      font-size: 1rem;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-box { max-width: 480px; margin: 0 auto; background: #0a0a0a; }
+    .video-box video { width:100%; display:block; aspect-ratio: 9/16; object-fit:cover; }
+    .video-box p {
+      padding: 1rem 1.25rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.38);
+      text-align: left;
+    }
+
+    /* CRAFT */
+    .craft-wrap { padding: clamp(5rem,10vw,9rem) 6vw; }
+    .craft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .craft-grid img { width:100%; aspect-ratio:2/3; object-fit:cover; display:block; }
+    .craft-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem,3vw,2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .craft-text p { font-size: 1rem; line-height: 1.9; color: rgba(245,240,232,0.62); margin-bottom: 1.2rem; }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: clamp(5rem,10vw,9rem) 6vw;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem,5vw,4.5rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 2.5rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--hot-pink);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.1rem 3.5rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #d9005f; transform: translateY(-2px); }
+    .back-link {
+      display: block;
+      margin-top: 2.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.28);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--off-white); }
+
+    /* FADE */
+    .fade-in { opacity:0; transform:translateY(22px); transition: opacity 0.85s ease, transform 0.85s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .brand-grid { grid-template-columns: 1fr; }
+      .brand-img { aspect-ratio: 4/3; order: -1; }
+      .craft-grid { grid-template-columns: 1fr; }
+      .g1,.g2,.g3,.g4,.g5 { grid-column: 1/13; grid-row: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-img" src="5231e7148f6dc59e84776f949652ff29.jpg" alt="Savage Wallflower — surrounded by her world">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Creative IP — Sami Booth</span>
+      <h1>A Brand Built From<br><em>Nothing But<br>Imagination.</em></h1>
+      <p class="hero-sub">Character · World · Product · Identity · Everything</p>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>For the Brave. Not the Beige.</span>
+      <span>Natural Fibres. Eco Inks. Handmade in London.</span>
+      <span>Not for the well behaved.</span>
+      <span>For the Brave. Not the Beige.</span>
+      <span>Natural Fibres. Eco Inks. Handmade in London.</span>
+      <span>Not for the well behaved.</span>
+    </div>
+  </div>
+
+  <!-- BRAND STATEMENT -->
+  <div class="brand-wrap">
+    <div class="brand-grid fade-in">
+      <div class="brand-text">
+        <span class="label">The Brand</span>
+        <h2>Not a cushion brand.<br>A world with<br>cushions in it.</h2>
+        <div class="brand-desc">
+          <p>Not for everyone.</p>
+          <p>Savage Wallflower creates interiors with a point of view.</p>
+          <p>Handmade in small runs from natural fibres. Designed for spaces that are expressive, not agreeable.</p>
+          <p>If it feels like too much, it probably isn't yours.</p>
+        </div>
+        <p class="body-copy">Everything here — the character, the backstory, the brand voice, the product designs, the copy, the visual identity, the website — was conceived, designed and built by one person. From a blank page.</p>
+      </div>
+      <img class="brand-img" src="8b0fa34fd278c00ba49f420f34521002.jpg" alt="Creator and character — Sami Booth and Savage Wallflower">
+    </div>
+  </div>
+
+  <!-- ORIGIN -->
+  <div class="origin">
+    <div class="origin-inner fade-in">
+      <span class="label">The Origin Story</span>
+      <h2>She grew up inside a grand, crumbling house where colour was a threat and obedience passed for virtue.</h2>
+      <p>From the moment she arrived — apricot-haired, loud-voiced, uncontainable — it was clear she did not belong. She felt too much. She loved animals more than hierarchy, colour more than approval.</p>
+      <p>She found her refuge in an abandoned Victorian Orangery — stone, glass and iron, half reclaimed by ivy and time. Among trailing vines and watchful animals, she stopped trying to behave.</p>
+      <p><strong>Colour became defiance. Ornament became language. Beauty became a refusal.</strong></p>
+    </div>
+  </div>
+
+  <!-- BUILT -->
+  <div class="built-wrap fade-in">
+    <div style="display:grid; grid-template-columns:1fr auto; gap:4vw; align-items:end; margin-bottom:3rem;">
+      <div>
+        <span class="label">The Full Scope</span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; color:var(--off-white);">One creator.<br>Every part of it.</h2>
+      </div>
+      <img src="5231e7148f6dc59e84776f949652ff29.jpg" alt="Creator and character" style="width:420px; height:200px; object-fit:cover; object-position:center center; display:block;">
+    </div>
+    <div class="built-grid">
+      <div class="built-item"><span class="num">01</span><h3>Character Creation</h3><p>A complete fictional protagonist — backstory, psychology, world, visual identity, and voice — built from scratch.</p></div>
+      <div class="built-item"><span class="num">02</span><h3>Narrative World</h3><p>The Orangery, the estate, the crumbling house — a fully realised fictional universe underpinning every product decision.</p></div>
+      <div class="built-item"><span class="num">03</span><h3>Product Design</h3><p>Every cushion and duvet design conceived and art directed — from the Floraphilia botanical collection to Off With Her Head.</p></div>
+      <div class="built-item"><span class="num">04</span><h3>Brand Identity</h3><p>Logo, colour system, typography, tone of voice, tagline. A complete brand that holds together across every touchpoint.</p></div>
+      <div class="built-item"><span class="num">05</span><h3>Copywriting</h3><p>Every word on the site — product descriptions, collection narratives, brand story, blog posts — in a single consistent voice.</p></div>
+      <div class="built-item"><span class="num">06</span><h3>Web Design & Build</h3><p>Full Shopify site designed and built independently. No agency. No template. A bespoke brand environment.</p></div>
+      <div class="built-item"><span class="num">07</span><h3>Art Direction</h3><p>All campaign imagery, room scenes and product visuals conceived and directed — bringing the fictional world into visual life.</p></div>
+      <div class="built-item"><span class="num">08</span><h3>Campaign & Content</h3><p>Video ads, still content, and editorial assets produced for the Off With Her Head collection and beyond.</p></div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery-wrap">
+    <span class="label" style="max-width:1300px; margin-left:auto; margin-right:auto;">The Work</span>
+    <div class="gallery-grid fade-in">
+      <div class="g1"><img src="IMG_5313.PNG" alt="Peacock cushions on white chair"></div>
+      <div class="g2"><img src="please-give-the-room-the-following-maximalist-make copy 3.jpeg" alt="Floraphilia room — please walk on the grass"></div>
+      <div class="g6"><img src="20260318_2250_Image Generation_remix_01km05hkshfzptf68hk5vkadj0.png" alt="Dream or Nightmare — damask duvet collection"></div>
+      <div class="g3"><img src="Untitled design 3 copy.png" alt="Off With Her Head cushions on dark sofa"></div>
+      <div class="g4"><img src="hhgytt76 copy.png" alt="The Disruptor on green velvet"></div>
+      <div class="g5"><img src="IMG_1528.jpeg" alt="Cotton linen fabric close-up"></div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-wrap-outer">
+    <span class="label" style="max-width:800px; margin-left:auto; margin-right:auto;">Off With Her Head — Campaign Film</span>
+    <h2>Celebrating History's<br>Inconvenient Women.</h2>
+    <p class="sub">Each piece tells the story of a woman history tried to silence.</p>
+    <div class="video-box fade-in">
+      <video controls playsinline>
+        <source src="REVOLUTIONARY OFHH AD (1).mp4" type="video/mp4">
+      </video>
+      <p>The Revolutionary — Off With Her Head Collection</p>
+    </div>
+  </div>
+
+  <!-- CRAFT -->
+  <div class="craft-wrap">
+    <div class="craft-grid fade-in">
+      <img src="IMG_1285.jpg" alt="Savage Wallflower label — handmade in London">
+      <div class="craft-text">
+        <span class="label">The Detail</span>
+        <h2>Every piece carries<br>the mark of its maker.</h2>
+        <p>Natural cotton linen. Non-toxic eco inks. Hand finished in London in small runs. The label inside every piece is hot pink. Because why wouldn't it be.</p>
+        <p>This is what it looks like when someone cares about every layer — not just the surface.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta fade-in">
+    <h2>See the world<br>it built.</h2>
+    <a class="cta-btn" href="https://www.savagewallflower.com" target="_blank" rel="noopener">Explore Savage Wallflower</a>
+    <a class="back-link" href="https://samibooth.com">← Back to Sami Booth</a>
+  </div>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
